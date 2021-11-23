@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+<style>
+.custom-shape-divider-bottom-1637656865 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(360deg);
+}
+
+.custom-shape-divider-bottom-1637656865 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 0.3px);
+    height: 127px;
+}
+.custom-shape-divider-bottom-1637656865 .shape-fill {
+    fill: #121516;
+}
+#section_top{
+    background: #030626;
+    background: -webkit-repeating-radial-gradient(ellipse farthest-corner at bottom right, #030626 0%, #172175 50%, #C24848 100%);
+    background: -moz-repeating-radial-gradient(ellipse farthest-corner at bottom right, #030626 0%, #172175 50%, #C24848 100%);
+    background: repeating-radial-gradient(ellipse farthest-corner at bottom right, #030626 0%, #172175 50%, #C24848 100%);
+}
+</style>
+
+{% block content %}
+{#  first body section #}
+<div id="section_top" class="bg-black row">
+  <div class="col">
+      <h1 class="display-5 text-light text-uppercase pt-5 mt-5 text-center">Welcome to
+          <span class="text-light display-1">ONEAUTH</span></h1>
+    <p class="text-center display-6 mx-1">One account, everywhere!</p>
+      <center>
+      <a href="#" class="btn btn-flat waves btn-dark btn-lg">Create your account now</a>
+      </center>
+  </div>
+  <div class="col mt-lg-1"><img src="{% static 'logo_no_bg.png' %}"  alt=""></div>
+
+  </div>
+<div class="custom-shape-divider-bottom-1637656865">
+
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+    </svg>
+
+
+</div>
+{# authentication section #}
+<div class="mt-lg-5 mt-md-5 container-fluid">
+<div class="card mb-3" style="max-width: 100%;">
+  <div class="row g-1">
+    <div class="col">
+        <p class="card-body">
+        <h5 class="card-title display-4 text-info">With ease</h5>
+        <p class="card-text">Let's handle your centralised area where you can keep maintaining your data from. You create an account, login once, then whichever platform you find that has implemented this authentication, use your data to login</p>
+        <p class="card-text">We just want to keep your centralised account, that you can update and your changes depict instantly to all platforms you have authenticated with using our module.</p>
+        <p class="card-text">Under this module, you can perform the fllowing:-
+        <ul>
+                <li>Add, update and delete your profile for a given application or for all the applications this inclusive all at once</li>
+                <li>Reset your password</li>
+                <li>Recover your lost password</li>
+                <li>Deactivate your account from some apps you have authorised before.</li>
+            </ul>
+        </p>
+
+        <p class="card-text">So what are you waiting, this is something we really think you have been yawning for. Create your account now!</p>
+
+    </p>
+    </div>
+      <div class="col">
+          <img
+                  src="{% static 'authenticate.png'%}"
+                  alt="..."
+                  class="img-fluid rounded-end"
+          />
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="mt-lg-5 mt-md-5 container-fluid ">
+    <div class="card  mb-3" style="max-width: 100%;">
+  <div class="row g-1">
+    <div class="col">
+      <img
+        src="{% static 'secure.png'%}"
+        alt="..."
+        class="img-fluid rounded-start"
+      />
+    </div>
+    <div class="col">
+      <div class="card-body mt-md-5">
+        <h5 class="card-title text-info display-3">Secure</h5>
+        <p class="card-text">
+          Security is highly maintained on both your data and the end-to-end transfer of this data to the configured third-party applications.
+        </p><p class="card-text">The platform and the APIs are maintained regularly, ensuring that they are never down. Our amazing team is ever up to make sure both the applications and users of the service are getting the best of our service.
+        </p><p class="card-text">As a developer we understand that handling authentication may be something hard, therefore we release this burden from you and let you focus on the most essential parts of your application while we handle the user management for you.
+        </p><p class="card-text">Also, as a user of applications, we understand that you may have a lot of trouble managing your accounts you have created in those very many applications, we therefore give a centralised dashboard where you update once for all the applications you want to sing to.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock content %}

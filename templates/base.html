@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> {% block title %}ONEauth{% endblock title %}</title>
+    <link rel="icon" href="{% static 'logo.png' %}">
+{% block styles %}
+{% endblock styles %}
+
+    <!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css"
+  rel="stylesheet"
+/>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-black">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Navbar brand -->
+    <a class="navbar-brand me-2" href="{% url 'auths:splash' %}">
+      <img
+        src="{% static 'logo_no_bg.png' %}"
+        height="26"
+        alt=""
+        loading="lazy"
+        style="margin-top: -1px;"
+      />
+        <span class="text-light">ONEAUTH</span>
+    </a>
+
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarButtonsExample"
+      aria-controls="navbarButtonsExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarButtonsExample">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">Developer</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+
+      <div class="d-flex align-items-center">
+        <a href="{% url 'auths:login' %}" type="button" class="btn btn-link px-3 me-2">
+          Login
+        </a>
+        <button type="button" class="btn btn-info me-3">
+          Create account
+        </button>
+        <a
+          class="btn btn-dark px-3"
+          href=""
+          role="button"
+          > How it works</a>
+      </div>
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+{% block content %}
+{% endblock content %}
+</body>
+</html>
+<!-- JQuery -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js"
+></script>
+<!-- custom JS -->
+<script src="{% static 'js/custom.js' %}"></script>
+{% block js %}
+
+{% endblock js %}

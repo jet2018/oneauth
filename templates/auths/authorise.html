@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<style>
+    .arrow1 {
+      animation: slide1 1s ease-in-out infinite;
+      margin-left: 9px;
+    }
+
+    @keyframes slide1 {
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(10px, 0);
+      }
+    }
+</style>
+{% endblock styles %}
+
+{% load  static %}
+{% block content %}
+    <center>
+    <section class="container mt-5">
+            <div class="row">
+                {# header section of the  login card#}
+                 <div class="col-md-6 border py-3 px-3 pb-5 offset-lg-3 mt-lg-5" style="border-radius: 10px">
+                {% if token %}
+                    <div class="text-center">
+                        <h6 class="display-6"> Authorising {{ application.application_name|capfirst }}</h6>
+                        <img src="{{ application.application_logo.url }}" alt="{{ application.application_name }}" class="rounded-circle" width="60px">
+                        <i class="fas fa-long-arrow-alt-right text-info arrow1"></i>
+                        <img src="{% static 'not_found.jpeg' %}"  class="rounded-circle" width="60px">
+                    </div>
+                {% else %}
+                    <div class="text-center">
+                        <img src="{% static 'logo_no_bg.png' %}" class="rounded-circle" width="60px">
+                        <h6 class="display-6"> Sign in </h6>
+                    </div>
+                {% endif %}
+{#                 form for username #}
+                    <form action="" class="form" method="post">
+                        {% csrf_token %}
+                       <div class="form-outline m-2" id="username_div" data-url="{% url 'auths:checker' %}">
+                          <input type="text" id="username" class="form-control form-control-lg" />
+                          <label class="form-label" for="username">Username/Phone/Email</label>
+                        </div>
+                        <button type="button" onclick="CheckUsername()" id="username_btn" class="btn mt-2 float-end btn-info">Next</button>
+{#                        innitially hidden   #}
+                        <!--hidden surprise -->
+                        <h1 class="d-none" id="welcome_text"></h1>
+                     <div class="form-outline m-2 d-none" id="password_div" data-url="{% url 'auths:login' %}">
+                          <input type="password" id="password" class="form-control form-control-lg" />
+                          <label class="form-label" for="password">Enter your Password</label>
+                        </div>
+                        <button type="button" onclick="NormalLogin()" id="password_btn" class="btn d-none mt-2 float-end btn-info">Login</button>
+                    </form>
+                 </div>
+            </div>
+        <a href="#">Forgot password</a>
+    </section>
+    </center>
+{% endblock content %}
